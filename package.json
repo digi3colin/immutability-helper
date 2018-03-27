@@ -9,7 +9,8 @@
     "test-travis": "npm run test-dtslint && nyc npm test && nyc report --reporter=lcov",
     "test": "mocha test.js",
     "test-dtslint": "npm run node-gt4 && dtslint || true",
-    "node-gt4": "node -e 'process.exit(/v(\\d+)/.exec(process.version)[1] <= 4) ? 1 : 0'"
+    "node-gt4": "node -e 'process.exit(/v(\\d+)/.exec(process.version)[1] <= 4) ? 1 : 0'",
+    "test-umd": "mocha test-umd.js"
   },
   "keywords": [
     "immutability"
@@ -21,7 +22,12 @@
     "dtslint": "^0.2.0",
     "expect": "^1.14.0",
     "mocha": "^2.4.5",
-    "nyc": "^5.6.0"
+    "nyc": "^5.6.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1"
   },
   "dependencies": {
     "invariant": "^2.2.0"
